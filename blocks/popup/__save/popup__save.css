@@ -1,6 +1,6 @@
 .popup__save {
     width: calc(100vw * (358/1280));
-    height: calc(100vh * (50/1280)); 
+    height: calc(100vh * (50/1280));
 background-color: #000000;
 color: white;
 border-radius: 2px;
