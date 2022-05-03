@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pages/index.css">
+  <title>Mesto</title>
+</head>
+<body class="page">
+        <header class="header">
+            <img class="header__logo" src="./images/logo.png" alt="Логотип">
+            <img class="header__line" src="./images/Line.png" alt="линия">
+        </header> 
+        <main> 
+            <section class="profile">
+                <div class="profile__info">
+                    <img class="profile__avatar" src="./images/avatar.jpg" alt="Аватар">
+                    <div class="profile__text">
+                        <div class="profile__edit">
+                            <h1 class="profile__title">Жак-Ив Кусто</h1>
+                            <button type="button" class="button__add"></button>
+                        </div>
+                        <p class="profile__subtitle">Исследователь океана</p>
+                    </div>
+                </div> 
+                <button class="button__edit"></button>   
+            </section>
+            <section>
+            <ul class="elements">
+                <li class="element">
+                    <img class="element__image" src="./images/karach.jpg" alt="Карачаевск">
+                    <div class="element__text">
+                        <p class="element__title">Карачаевск</p>
+                        <button type="button" class="element__heart"></button>
+                    </div>
+                </li>
+                <li class="element">
+                    <img class="element__image" src="./images/dombai.png" alt="Домбай">
+                    <div class="element__text">
+                        <p class="element__title">Домбай</p>
+                        <button type="button" class="element__heart"></button>
+                    </div>
+                </li>
+                <li class="element">
+                    <img class="element__image" src="./images/elbrus.png" alt="Гора Эльбрус">
+                    <div class="element__text">
+                        <p class="element__title">Гора Эльбрус</p>
+                        <button type="button" class="element__heart"></button>
+                    </div>
+                </li>
+                <li class="element">
+                    <img class="element__image" src="./images/dombai.png" alt="Домбай">
+                    <div class="element__text">
+                        <p class="element__title">Домбай</p>
+                        <button type="button" class="element__heart"></button>
+                    </div>
+                </li>
+                <li class="element">
+                    <img class="element__image" src="./images/elbrus.png" alt="Гора Эльбрус">
+                    <div class="element__text">
+                        <p class="element__title">Гора Эльбрус</p>
+                        <button type="button" class="element__heart"></button>
+                    </div>
+                </li>
+                <li class="element">
+                    <img class="element__image" src="./images/karach.jpg" alt="Карачаево-Черкессия">
+                    <div class="element__text">
+                        <p class="element__title">Карачаево-Черкессия</p>
+                        <button type="button" class="element__heart"></button>
+                    </div>
+                </li>
+            </ul>
+            </section>
+        </main>       
+        <footer class="footer">
+            <p class="footer__copyright">&copy;2022 Mesto Russia</p>
+        </footer>
+        <section class="popup">
+            <button type="button" class="popup__close"></button>
+            <form class="popup__container">
+                <h2 class="popup__title">Редактировать профиль</h2>
+                <input type="text" class="popup__profile-title">
+                <input type="text" class="popup__profile-subtitle">
+                <button type="button" class="popup__save">Сохранить</button>
+            </form>
+        </section>
+</body>
+<script defer src="./scripts/popup.js"></script>
+<script defer src="./scripts/heart.js"></script>
+</html>

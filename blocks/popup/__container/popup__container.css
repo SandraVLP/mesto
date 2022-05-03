@@ -1,0 +1,29 @@
+.popup__container {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+    width: calc(100vw * (430/1280));
+    height: calc(100vh * (330/1280));
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+
+    
+}
+
+@media screen and (max-width: 610px) {
+    .popup__container {
+        width: calc(100vw * (282/320));
+        height: 322px;
+        
+    }
+
+}

@@ -1,0 +1,19 @@
+.profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 36px auto 47px auto;
+    font-family: 'Inter';
+    color: #FFFFFF;
+}
+
+
+@media screen and (max-width: 610px) {
+    .profile {
+        
+        flex-direction: column;
+        margin: 38.25px auto 47px auto;
+        
+    }
+
+}
