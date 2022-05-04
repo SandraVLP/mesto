@@ -1,6 +1,6 @@
 .popup__save {
     width: calc(100vw * (358/1280));
-    height: calc(100vh * (50/1280));
+    height: 50px;
 background-color: #000000;
 color: white;
 border-radius: 2px;
@@ -16,6 +16,7 @@ margin-right: auto;
 @media screen and (max-width: 610px) {
     .popup__save {
         width: calc(100vw * (238/320));
+        height: 46px;
 
     }
 
