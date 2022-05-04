@@ -1,5 +1,5 @@
 .popup__profile-title {
-    width: calc(100vw * (358/1280));
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     font-style: normal;
@@ -9,15 +9,5 @@
     margin-bottom: 30px;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-
-}
-
-
-
-@media screen and (max-width: 610px) {
-    .popup__profile-title {
-        width: calc(100vw * (238/320));
-
-    }
 
 }

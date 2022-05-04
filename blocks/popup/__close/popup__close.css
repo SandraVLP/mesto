@@ -5,8 +5,8 @@
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
-    left: 67%;
-    top: 29%;
+    left: 101%;
+    top: -12%;
     background-color: transparent;
     border: 0;
 
@@ -23,7 +23,7 @@
     .popup__close {
         width: 20px;
         height: 20px;
-        left: 90%;
+        left: 92%;
        
     }
 

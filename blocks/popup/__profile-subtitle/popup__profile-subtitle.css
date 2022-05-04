@@ -1,5 +1,5 @@
 .popup__profile-subtitle {
-    width: calc(100vw * (358/1280));
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     font-style: normal;
@@ -13,7 +13,6 @@
 
 @media screen and (max-width: 610px) {
     .popup__profile-subtitle {
-        width: calc(100vw * (238/320));
         margin-bottom: 45px;
 
     }
