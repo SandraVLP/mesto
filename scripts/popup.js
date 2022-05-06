@@ -3,8 +3,8 @@ const popup = document.querySelector(".popup");
 const popupClsBtn = document.querySelector(".popup__close");
 const title = document.querySelector(".profile__title");
 const subtitle = document.querySelector(".profile__subtitle");
-const popupTitle = document.querySelector(".popup__profile-title");
-const popupSubtitle = document.querySelector(".popup__profile-subtitle");
+const popupTitle = document.querySelector(".popup__profile_title");
+const popupSubtitle = document.querySelector(".popup__profile_subtitle");
 const popupSaveBtn = document.querySelector(".popup__save");
 
 function openPopup () {

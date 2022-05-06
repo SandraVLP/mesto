@@ -1,0 +1,13 @@
+.popup__profile_subtitle {
+
+    margin-bottom: 48px;
+
+}
+
+@media screen and (max-width: 610px) {
+    .popup__profile_subtitle {
+        margin-bottom: 45px;
+
+    }
+
+}
