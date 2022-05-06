@@ -1,5 +1,5 @@
 .element__heart {
-    background-image: url("../../../images/heart.png");
+    background-image: url("../../../images/heart.svg");
     background-repeat: no-repeat;
 background-position: center;
 background-color: white;
@@ -17,6 +17,6 @@ margin-right: 20px;
 } 
 
 .element__heart_active {
-    background-image: url("../../../images/heart-black.png");
+  
 
 }

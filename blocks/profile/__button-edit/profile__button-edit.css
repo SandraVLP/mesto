@@ -1,14 +1,16 @@
 .profile__button-edit {
-    width: calc(100vw *(150/1280));
+    max-width: 150px;
+    width: 11.72vw;
     height: 50px;
     background-color: black;
     border: 2px solid #FFFFFF;
-box-sizing: border-box;
-border-radius: 2px;
-background-image: url("./../../../images/plus.png");
-background-repeat: no-repeat;
-background-position: center;
-align-self: center;
+    box-sizing: border-box;
+    border-radius: 2px;
+    background-image: url("./../../../images/plus.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    align-self: center;
+    padding: 0;
 }
 
 .profile__button-edit:hover {
@@ -16,10 +18,10 @@ align-self: center;
     opacity: 0.6;
 } 
 
-@media screen and (max-width: 610px) {
+@media screen and (max-width: 770px) {
     .profile__button-edit {
-
-        width: 100%;
+        max-width: 420px;
+        width: 88.13vw;
         
     }
 

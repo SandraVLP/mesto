@@ -1,19 +1,11 @@
 .page {
-    width: calc(100vw * (880 / 1280));
-    max-width:100%;
+    width: 100vw;
+    max-width: 880px;
     margin: 0 auto;
     background-color: #000000;
     font-family: 'Inter', Arial, Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   
-
-}
-
-@media screen and (max-width: 610px) {
-    .page {
-        width: calc(100vw * (282 / 320));
-        
-    }
 
 }

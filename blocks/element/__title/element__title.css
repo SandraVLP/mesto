@@ -2,16 +2,15 @@
     margin-block-start: 0;
     margin-block-end: 0;
     margin-left: 21px;
-    background-color: #FFFFFF;
+    background-color: rgb(255, 255, 255);
     font-style: normal;
 font-weight: 900;
 font-size: 24px;
 line-height: 29px;
-color: #000000;
+color: rgb(0, 0, 0);
 text-overflow: ellipsis;
 white-space: nowrap;
 overflow: hidden;
-width: calc(100vw * (224/1280));
 flex-basis: 224px;
 
 }
