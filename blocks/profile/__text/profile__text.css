@@ -3,8 +3,9 @@
     margin-left: 30px;
 }
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 880px) {
     .profile__text {
+        max-width: 282px;
         margin-top: 22.5px;
         margin-bottom: 36px;
         margin-left: auto;

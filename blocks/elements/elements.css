@@ -1,22 +1,10 @@
 .elements {
     padding-inline-start: 0;
-    width: 68.75vw;
     list-style-type: none;
     margin-block-start: 0;
     margin-block-end: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
+    grid-template-columns: repeat(auto-fit, 282px);
     gap: 20px 17px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-@media screen and (max-width: 610px) {
-    .elements {
-        display: flex;
-        flex-direction: column;
-        width: 88.13vw;
-        
-    }
-
+    justify-content: center;
 }

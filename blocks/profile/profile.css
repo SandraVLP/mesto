@@ -1,19 +1,19 @@
 .profile {
-    width: 68.75vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 36px auto 47px auto;
-    font-family: 'Inter';
-    color: #FFFFFF;
+    padding-bottom: 51px ;
+    padding-top: 40px;
+    color: rgb(255, 255, 255);
 }
 
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 880px) {
     .profile {
         
         flex-direction: column;
-        margin: 38.25px auto 47px auto;
+        padding-top: 42px;
+        padding-bottom: 36px;
         
     }
 
