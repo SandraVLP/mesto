@@ -11,4 +11,10 @@
     background-position: center;
     background-color: transparent;
     padding: 0;
+    z-index: 3;
 }
+
+.element__basket:hover {
+    cursor: pointer;
+    opacity: 0.5;
+} 

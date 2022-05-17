@@ -1,5 +1,5 @@
 const elementTemplate = document.querySelector("#elementsTemplate").content;
-const elements = document.querySelector(".elements");
+const card = document.querySelector(".card");
 const initialCards = [
     {
       name: 'Архыз',
@@ -34,14 +34,14 @@ const initialCards = [
       element.querySelector(".element__title").textContent = item.name;
       element.querySelector(".element__image").src = item.link;
       element.querySelector(".element__image").alt = item.name;
-      elements.append(element);
+      card.append(element);
 
 
 });
 
 
 
-  elements.onclick = (e) => {
+  card.onclick = (e) => {
     const el = e.target;
       if (el.classList.contains("element__heart")) {
         el.classList.toggle("element__heart_active");
@@ -69,23 +69,23 @@ function elementClosePopup () {
 elementPopupClsBtn.addEventListener("click", elementClosePopup);
 
 const popupElementsOpnBtn = document.querySelector(".profile__button-edit");
-const popupElements = document.querySelector(".elements_popup");
-const popupElementsClsBtn = document.querySelector(".elements__close_popup");
-const popupElementsTitle = document.querySelector(".elements__title_popup");
-const popupElementsLink = document.querySelector(".elements__link_popup");
-const popupMakeBtn = document.querySelector(".elements__save_popup");
+const popupElements = document.querySelector(".popup_elements");
+const popupElementsClsBtn = document.querySelector(".popup__close_elements");
+const popupElementsTitle = document.querySelector(".popup__profile_title_elements");
+const popupElementsLink = document.querySelector(".popup__profile_subtitle_elements");
+const popupMakeBtn = document.querySelector(".popup__save_elements");
 
 
 function openElementsPopup () {
 
-    popupElements.classList.add("elements_popup_active");
+    popupElements.classList.add("popup_elements_active");
     popupElementsTitle.value = `Название`;
     popupElementsLink.value = `Ссылка на картинку`;
 
 }
 
 function closeElementsPopup () {
-    popupElements.classList.remove("elements_popup_active");
+    popupElements.classList.remove("popup_elements_active");
 }
 
 popupElementsOpnBtn.addEventListener("click", openElementsPopup);
@@ -98,7 +98,7 @@ function addNewElement (e) {
     const element = elementTemplate.querySelector(".element").cloneNode(true);
     element.querySelector(".element__title").textContent = popupElementsTitle.value;
     element.querySelector(".element__image").src = popupElementsLink.value;
-    elements.prepend(element);
+    card.prepend(element);
     closeElementsPopup ();
 
 }

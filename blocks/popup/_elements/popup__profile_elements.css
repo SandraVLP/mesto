@@ -1,9 +1,9 @@
-.elements__link_popup {
+.popup__profile_elements {
     color: rgb(196, 196, 196);
 
 }
 
-.elements__link_popup:focus {
+.popup__profile_elements:focus {
     color: rgb(0, 0, 0);
    } 
 
