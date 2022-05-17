@@ -49,7 +49,7 @@ const initialCards = [
         const popupElement = document.querySelector(".element-popup");
         const popupElementImage = document.querySelector(".element__image_popup");
         const popupElementTitle = document.querySelector(".element__title_popup");
-        popupElement.classList.add("element_popup_active");
+        popupElement.classList.add("element-popup_active");
        popupElementImage.src = e.target.src;
        popupElementTitle.textContent= e.target.alt;
     } else if (el.classList.contains("element__basket")) {
@@ -63,7 +63,7 @@ const initialCards = [
 const elementPopupClsBtn = document.querySelector(".element__close_popup")
 function elementClosePopup () {
     const popupElement = document.querySelector(".element-popup");
-        popupElement.classList.remove("element_popup_active");
+        popupElement.classList.remove("element-popup_active");
 }
 
 elementPopupClsBtn.addEventListener("click", elementClosePopup);

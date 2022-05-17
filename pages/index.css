@@ -8,7 +8,7 @@
 @import url(../blocks/card/card.css);
 @import url(../blocks/element/element.css);
 @import url(../blocks/element/_popup/element-popup.css);
-@import url(../blocks/element/_popup/_active/element_popup_active.css);
+@import url(../blocks/element/_popup/_active/element-popup_active.css);
 @import url(../blocks/element/__image/_popup/element__image_popup.css);
 @import url(../blocks/element/__title/_popup/element__title_popup.css);
 @import url(../blocks/element/__container/_popup/element__container_popup.css);
