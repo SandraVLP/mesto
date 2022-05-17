@@ -46,7 +46,7 @@ const initialCards = [
       if (el.classList.contains("element__heart")) {
         el.classList.toggle("element__heart_active");
       } else if (el.classList.contains("element__image")) {
-        const popupElement = document.querySelector(".element_popup");
+        const popupElement = document.querySelector(".element-popup");
         const popupElementImage = document.querySelector(".element__image_popup");
         const popupElementTitle = document.querySelector(".element__title_popup");
         popupElement.classList.add("element_popup_active");
@@ -62,7 +62,7 @@ const initialCards = [
 
 const elementPopupClsBtn = document.querySelector(".element__close_popup")
 function elementClosePopup () {
-    const popupElement = document.querySelector(".element_popup");
+    const popupElement = document.querySelector(".element-popup");
         popupElement.classList.remove("element_popup_active");
 }
 
