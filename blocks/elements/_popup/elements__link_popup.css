@@ -1,0 +1,10 @@
+.elements__link_popup {
+    color: rgb(196, 196, 196);
+
+}
+
+.elements__link_popup:focus {
+    color: rgb(0, 0, 0);
+   } 
+
+  

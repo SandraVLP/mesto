@@ -24,51 +24,7 @@
                 </div> 
                 <button class="profile__button-edit"></button>   
             </section>
-            <section class="grid">
-            <ul class="elements">
-                <li class="element">
-                    <img class="element__image" src="./images/karach.jpg" alt="Карачаевск">
-                    <div class="element__text">
-                        <h2 class="element__title">Карачаевск</h2>
-                        <button type="button" class="element__heart"></button>
-                    </div>
-                </li>
-                <li class="element">
-                    <img class="element__image" src="./images/dombai.png" alt="Домбай">
-                    <div class="element__text">
-                        <h2  class="element__title">Домбай</h2>
-                        <button type="button" class="element__heart"></button>
-                    </div>
-                </li>
-                <li class="element">
-                    <img class="element__image" src="./images/elbrus.png" alt="Гора Эльбрус">
-                    <div class="element__text">
-                        <h2  class="element__title">Гора Эльбрус</h2>
-                        <button type="button" class="element__heart"></button>
-                    </div>
-                </li>
-                <li class="element">
-                    <img class="element__image" src="./images/dombai.png" alt="Домбай">
-                    <div class="element__text">
-                        <h2 class="element__title">Домбай</h2>
-                        <button type="button" class="element__heart"></button>
-                    </div>
-                </li>
-                <li class="element">
-                    <img class="element__image" src="./images/elbrus.png" alt="Гора Эльбрус">
-                    <div class="element__text">
-                        <h2  class="element__title">Гора Эльбрус</h2>
-                        <button type="button" class="element__heart"></button>
-                    </div>
-                </li>
-                <li class="element">
-                    <img class="element__image" src="./images/karach.jpg" alt="Карачаево-Черкессия">
-                    <div class="element__text">
-                        <h2  class="element__title">Карачаево-Черкессия</h2>
-                        <button type="button" class="element__heart"></button>
-                    </div>
-                </li>
-            </ul>
+            <section class="elements">
             </section>
         </main>       
         <footer class="footer">
@@ -83,6 +39,33 @@
                 <button type="button" class="popup__save">Сохранить</button>
             </form>
         </div>
+        <div class="elements_popup">
+            <form class="elements__container_popup popup__container">
+                <button type="button" class="popup__close elements__close_popup"></button>
+                <h2 class="elements__container-title_popup">Новое место</h2>
+                <input type="text" class="popup__profile popup__profile_title elements__title_popup">
+                <input type="text" class="popup__profile popup__profile_subtitle elements__link_popup">
+                <button type="button" class="popup__save elements__save_popup">Создать</button>
+            </form>
+        </div>
+        <template id="elementsTemplate">
+            <div class="element">
+                <img class="element__image" src="" alt="Картинка">
+                <button type="button" class="element__basket"></button>
+                <div class="element__text">
+                    <h2 class="element__title"></h2>
+                    <button type="button" class="element__heart"></button>
+                </div>
+            </div>
+        </template>
+        <div class="element_popup">
+            <div class="element__container_popup">
+                <button type="button" class="element__close_popup popup__close"></button>
+                <img class="element__image_popup">
+                <p class="element__title_popup"></p>
+            </div>
+        </div>
         <script defer src="./scripts/popup.js"></script>
+        <script defer src="./scripts/card.js"></script>
 </body>
 </html>

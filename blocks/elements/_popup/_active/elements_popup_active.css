@@ -1,0 +1,4 @@
+.elements_popup_active {
+    opacity: 1;
+    z-index: 999;
+}

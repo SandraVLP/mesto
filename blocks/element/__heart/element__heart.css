@@ -16,7 +16,7 @@ margin-right: 20px;
     opacity: 0.5;
 } 
 
-.element__heart:active {
+.element__heart_active {
     background-image: url("../../../images/black-heart.svg");
   
 

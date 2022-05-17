@@ -29,11 +29,7 @@ function submitPopup (event) {
 
 popupOpnBtn.addEventListener("click", openPopup);
 
-
 popupClsBtn.addEventListener("click", closePopup);
 
 popupSaveBtn.addEventListener("click", submitPopup);
-
-
-
 

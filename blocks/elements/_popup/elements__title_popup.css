@@ -1,0 +1,8 @@
+.elements__title_popup {
+    color: rgb(196, 196, 196);
+}
+
+
+.elements__title_popup:focus {
+    color: rgb(0, 0, 0);
+}
