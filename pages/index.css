@@ -31,11 +31,11 @@
 @import url(../blocks/popup/__close/popup__close.css);
 @import url(../blocks/popup/_active/popup_active.css);
 @import url(../blocks/popup/_element/_active/popup_element_active.css);
-@import url(../blocks/popup/_element/__container/popup__container_element.css);
-@import url(../blocks/popup/_element/__image/popup__image_element.css);
-@import url(../blocks/popup/_element/__title/popup__title_element.css);
+@import url(../blocks/popup/__container/_element/popup__container_element.css);
+@import url(../blocks/popup/__image/_element/popup__image_element.css);
+@import url(../blocks/popup/__title/_element/popup__title_element.css);
 @import url(../blocks/popup/_element/popup_element.css);
 @import url(../blocks/popup/_elements/popup_elements.css);
-@import url(../blocks/popup/_elements/popup__profile_elements.css);
+@import url(../blocks/popup/__profile/_elements/popup__profile_elements.css);
 @import url(../blocks/popup/_elements/_active/popup_elements_active.css);
 
