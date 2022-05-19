@@ -46,10 +46,10 @@ const initialCards = [
       if (el.classList.contains("element__heart")) {
         el.classList.toggle("element__heart_active");
       } else if (el.classList.contains("element__image")) {
-        const popupElement = document.querySelector(".element-popup");
-        const popupElementImage = document.querySelector(".element__image_popup");
-        const popupElementTitle = document.querySelector(".element__title_popup");
-        popupElement.classList.add("element-popup_active");
+        const popupElement = document.querySelector(".popup_element");
+        const popupElementImage = document.querySelector(".popup_element__image");
+        const popupElementTitle = document.querySelector(".popup_element__title");
+        popupElement.classList.add("popup_element_active");
        popupElementImage.src = e.target.src;
        popupElementTitle.textContent= e.target.alt;
     } else if (el.classList.contains("element__basket")) {
@@ -60,10 +60,10 @@ const initialCards = [
     console.log(e.target);
 }
 
-const elementPopupClsBtn = document.querySelector(".element__close_popup")
+const elementPopupClsBtn = document.querySelector(".popup_element__close")
 function elementClosePopup () {
-    const popupElement = document.querySelector(".element-popup");
-        popupElement.classList.remove("element-popup_active");
+    const popupElement = document.querySelector(".popup_element");
+        popupElement.classList.remove("popup_element_active");
 }
 
 elementPopupClsBtn.addEventListener("click", elementClosePopup);
@@ -71,8 +71,8 @@ elementPopupClsBtn.addEventListener("click", elementClosePopup);
 const popupElementsOpnBtn = document.querySelector(".profile__button-edit");
 const popupElements = document.querySelector(".popup_elements");
 const popupElementsClsBtn = document.querySelector(".popup__close_elements");
-const popupElementsTitle = document.querySelector(".popup__profile_title_elements");
-const popupElementsLink = document.querySelector(".popup__profile_subtitle_elements");
+const popupElementsTitle = document.querySelector(".elements__title_popup");
+const popupElementsLink = document.querySelector(".elements__link_popup");
 const popupMakeBtn = document.querySelector(".popup__save_elements");
 
 
@@ -105,6 +105,3 @@ function addNewElement (e) {
 
 popupMakeBtn.addEventListener("click", addNewElement);
 
-
-
-  
