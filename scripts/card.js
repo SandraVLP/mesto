@@ -71,8 +71,8 @@ elementPopupClsBtn.addEventListener("click", elementClosePopup);
 const popupElementsOpnBtn = document.querySelector(".profile__button-edit");
 const popupElements = document.querySelector(".popup_elements");
 const popupElementsClsBtn = document.querySelector(".popup__close_elements");
-const popupElementsTitle = document.querySelector(".popup__title_elements");
-const popupElementsLink = document.querySelector(".popup__link_elements");
+const popupElementsTitle = document.querySelector(".popup__profile_title_elements");
+const popupElementsLink = document.querySelector(".popup__profile_subtitle_elements");
 const popupMakeBtn = document.querySelector(".popup__save_elements");
 
 
