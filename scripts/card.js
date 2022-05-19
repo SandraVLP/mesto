@@ -47,8 +47,8 @@ const initialCards = [
         el.classList.toggle("element__heart_active");
       } else if (el.classList.contains("element__image")) {
         const popupElement = document.querySelector(".popup_element");
-        const popupElementImage = document.querySelector(".popup__image_element");
-        const popupElementTitle = document.querySelector(".popup__title_element");
+        const popupElementImage = document.querySelector(".popup__image");
+        const popupElementTitle = document.querySelector(".popup__image-title");
         popupElement.classList.add("popup_element_active");
        popupElementImage.src = e.target.src;
        popupElementTitle.textContent= e.target.alt;
