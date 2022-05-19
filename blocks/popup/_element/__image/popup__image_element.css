@@ -1,4 +1,4 @@
-.popup_element__image {
+.popup__image_element {
     object-fit: contain;
     max-width: 75vw;
     max-height: 75vh;
@@ -7,7 +7,7 @@
 
 
 @media screen and (max-width: 610px) {
-    .popup_element__image {
+    .popup__image_element {
         min-width: 282px;
      
       

@@ -1,4 +1,4 @@
-.popup_element__container {
+.popup__container_element {
     position: absolute;
     transform: translate(-50%, -50%);
     left: 50%;
@@ -13,7 +13,7 @@
 }
 
 @media screen and (max-width: 610px) {
-    .popup_element__container {
+    .popup__container_element {
         min-width: 282px;
      
       

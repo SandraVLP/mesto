@@ -47,8 +47,8 @@ const initialCards = [
         el.classList.toggle("element__heart_active");
       } else if (el.classList.contains("element__image")) {
         const popupElement = document.querySelector(".popup_element");
-        const popupElementImage = document.querySelector(".popup_element__image");
-        const popupElementTitle = document.querySelector(".popup_element__title");
+        const popupElementImage = document.querySelector(".popup__image_element");
+        const popupElementTitle = document.querySelector(".popup__title_element");
         popupElement.classList.add("popup_element_active");
        popupElementImage.src = e.target.src;
        popupElementTitle.textContent= e.target.alt;
@@ -60,7 +60,7 @@ const initialCards = [
     console.log(e.target);
 }
 
-const elementPopupClsBtn = document.querySelector(".popup_element__close")
+const elementPopupClsBtn = document.querySelector(".popup__close_element")
 function elementClosePopup () {
     const popupElement = document.querySelector(".popup_element");
         popupElement.classList.remove("popup_element_active");
@@ -71,8 +71,8 @@ elementPopupClsBtn.addEventListener("click", elementClosePopup);
 const popupElementsOpnBtn = document.querySelector(".profile__button-edit");
 const popupElements = document.querySelector(".popup_elements");
 const popupElementsClsBtn = document.querySelector(".popup__close_elements");
-const popupElementsTitle = document.querySelector(".elements__title_popup");
-const popupElementsLink = document.querySelector(".elements__link_popup");
+const popupElementsTitle = document.querySelector(".popup__title_elements");
+const popupElementsLink = document.querySelector(".popup__link_elements");
 const popupMakeBtn = document.querySelector(".popup__save_elements");
 
 
