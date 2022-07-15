@@ -1,5 +1,5 @@
-const elementTemplate = document.querySelector("#elementsTemplate").content;
-const card = document.querySelector(".card");
+const cardTemplate = document.querySelector("#cardTemplate").content;
+const cardsSection = document.querySelector(".card");
 const initialCards = [
     {
       name: 'Архыз',
@@ -27,81 +27,52 @@ const initialCards = [
     }
   ];
 
+  const addLike = (e) => {
+    e.target.classList.toggle("element__heart_active");
+  };
+
+  const deleteCard = (e) => {
+    e.target.closest(".element").remove();
+  };
 
 
-  initialCards.forEach((item) => {
-      const element = elementTemplate.querySelector(".element").cloneNode(true);
-      element.querySelector(".element__title").textContent = item.name;
-      element.querySelector(".element__image").src = item.link;
-      element.querySelector(".element__image").alt = item.name;
-      card.append(element);
+const createCard = (name, link) => {
+  const element = cardTemplate.querySelector(".element").cloneNode(true);
+  element.querySelector(".element__title").textContent = name;
+  element.querySelector(".element__image").src = link;
+  element.querySelector(".element__image").alt = name;
+  element.querySelector(".element__heart").addEventListener("click", addLike);
+  element.querySelector(".element__basket").addEventListener("click", deleteCard);
+  element.querySelector(".element__image").addEventListener("click", openFullImagePopup);
+  return element;
+}; 
 
+const renderCard = (name, link, toEnd) => {
+  const elementCard = createCard(name, link);
+  if (toEnd === true) {
+    cardsSection.prepend(elementCard);
+  }
+  else {
+    cardsSection.append(elementCard);
+  }   
+};
 
-});
-
-
-
-  card.onclick = (e) => {
-    const el = e.target;
-      if (el.classList.contains("element__heart")) {
-        el.classList.toggle("element__heart_active");
-      } else if (el.classList.contains("element__image")) {
-        const popupElement = document.querySelector(".popup_element");
-        const popupElementImage = document.querySelector(".popup__image");
-        const popupElementTitle = document.querySelector(".popup__image-title");
-        popupElement.classList.add("popup_element_active");
-       popupElementImage.src = e.target.src;
-       popupElementTitle.textContent= e.target.alt;
-    } else if (el.classList.contains("element__basket")) {
-        e.target.closest(".element").remove();
-      } else {
-          return;
-      }
-    console.log(e.target);
-}
-
-const elementPopupClsBtn = document.querySelector(".popup__close_element")
-function elementClosePopup () {
-    const popupElement = document.querySelector(".popup_element");
-        popupElement.classList.remove("popup_element_active");
-}
-
-elementPopupClsBtn.addEventListener("click", elementClosePopup);
-
-const popupElementsOpnBtn = document.querySelector(".profile__button-edit");
-const popupElements = document.querySelector(".popup_elements");
-const popupElementsClsBtn = document.querySelector(".popup__close_elements");
-const popupElementsTitle = document.querySelector(".popup__profile_title_elements");
-const popupElementsLink = document.querySelector(".popup__profile_subtitle_elements");
-const popupMakeBtn = document.querySelector(".popup__save_elements");
-
-
-function openElementsPopup () {
-
-    popupElements.classList.add("popup_elements_active");
-    popupElementsTitle.value = `Название`;
-    popupElementsLink.value = `Ссылка на картинку`;
-
-}
-
-function closeElementsPopup () {
-    popupElements.classList.remove("popup_elements_active");
-}
-
-popupElementsOpnBtn.addEventListener("click", openElementsPopup);
-
-popupElementsClsBtn.addEventListener("click", closeElementsPopup);
 
 
 function addNewElement (e) {
-    e.preventDefault();
-    const element = elementTemplate.querySelector(".element").cloneNode(true);
-    element.querySelector(".element__title").textContent = popupElementsTitle.value;
-    element.querySelector(".element__image").src = popupElementsLink.value;
-    card.prepend(element);
-    closeElementsPopup ();
+  e.preventDefault();
+  const name = popupElementsTitle.value;
+  const link = popupElementsLink.value;
+  renderCard(name, link, true);
+  closePopup ();
 
 }
 
-popupMakeBtn.addEventListener("click", addNewElement);
+initialCards.forEach(e => renderCard(e.name, e.link));
 
+
+const popupMakeBtn = document.querySelector(".popup__save_elements");
+
+
+
+popupMakeBtn.addEventListener("click", addNewElement);

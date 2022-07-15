@@ -1,13 +1,5 @@
 .popup_elements {
 
-        opacity: 0;
-        z-index: -1;
-        background-color: rgba(0, 0, 0, 0.5);
-        position: fixed;
-        transition: .3s;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
+
     
 }
