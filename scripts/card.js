@@ -38,12 +38,13 @@ const initialCards = [
 
 const createCard = (name, link) => {
   const element = cardTemplate.querySelector(".element").cloneNode(true);
+  const elementImage = element.querySelector(".element__image");
   element.querySelector(".element__title").textContent = name;
-  element.querySelector(".element__image").src = link;
-  element.querySelector(".element__image").alt = name;
+  elementImage.src = link;
+  elementImage.alt = name;
   element.querySelector(".element__heart").addEventListener("click", addLike);
   element.querySelector(".element__basket").addEventListener("click", deleteCard);
-  element.querySelector(".element__image").addEventListener("click", openFullImagePopup);
+  elementImage.addEventListener("click", openFullImagePopup);
   return element;
 }; 
 
@@ -59,20 +60,17 @@ const renderCard = (name, link, toEnd) => {
 
 
 
-function addNewElement (e) {
+function handleSubmitAddCardForm (e) {
   e.preventDefault();
-  const name = popupElementsTitle.value;
-  const link = popupElementsLink.value;
+  const name = newCardTitleInput.value;
+  const link = newCardLinkInput.value;
   renderCard(name, link, true);
-  closePopup ();
+  closeAddCardPopup ();
 
 }
 
 initialCards.forEach(e => renderCard(e.name, e.link));
 
 
-const popupMakeBtn = document.querySelector(".popup__save_elements");
 
-
-
-popupMakeBtn.addEventListener("click", addNewElement);
+popupAddCard.addEventListener("submit", handleSubmitAddCardForm);

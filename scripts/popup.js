@@ -1,69 +1,82 @@
-const addCardPopup = document.querySelector(".popup_elements");
+const popupAddCard = document.querySelector(".popup_elements");
 const cardPopup = document.querySelector(".popup_element");
-const EditProfilePopup = document.querySelector(".popup_editprofile");
+const popupEditProfile = document.querySelector(".popup_editprofile");
 const popups = document.querySelectorAll(".popup");
 
-const openEditProfileButton = document.querySelector(".profile__button-add");
-const openAddCardButton = document.querySelector(".profile__button-edit");
+const buttonOpenEditProfilePopup = document.querySelector(".profile__button-add");
+const buttonOpenAddCardPopup = document.querySelector(".profile__button-edit");
 const imagePreview = document.querySelector(".element__image");
 
-const popupClsBtns = document.querySelectorAll(".popup__close");
+const popupCloseButtons = document.querySelectorAll(".popup__close");
+const buttonCloseEditProfile = document.querySelector(".popup__closeprofile")
+const buttonCloseAddImage = document.querySelector(".popup__close_elements");
+const buttonCloseImage = document.querySelector(".popup__close_element");
 
-const popupElementsTitle = document.querySelector(".popup__profile_title_elements");
-const popupElementsLink = document.querySelector(".popup__profile_subtitle_elements");
+const newCardTitleInput = document.querySelector(".popup__profile_title_elements");
+const newCardLinkInput = document.querySelector(".popup__profile_subtitle_elements");
 const title = document.querySelector(".profile__title");
 const subtitle = document.querySelector(".profile__subtitle");
-const popupTitle = document.querySelector(".popup__profile_title");
-const popupSubtitle = document.querySelector(".popup__profile_subtitle");
-const popupElementImage = document.querySelector(".popup__image");
-const popupElementTitle = document.querySelector(".popup__image-title");
+const profileNameInput = document.querySelector(".popup__profile_title");
+const profileInfoInput = document.querySelector(".popup__profile_subtitle");
+const fullWidthPopupImage = document.querySelector(".popup__image");
+const fullWidthPopupTitle = document.querySelector(".popup__image-title");
 
-const popupSaveBtn = document.querySelector(".popup__save");
 
 function openPopup (popup) {
     popup.classList.add("popup_active");
 };
 
-function  openEditProfilePopup () {
-    openPopup(EditProfilePopup);
-    popupTitle.value = title.textContent;
-    popupSubtitle.value = subtitle.textContent;
+function  openPopupEditProfile () {
+    openPopup(popupEditProfile);
+  
 };
 
 function openAddCardPopup () {
-    openPopup(addCardPopup);
-    popupElementsTitle.value = `Название`;
-    popupElementsLink.value = `Ссылка на картинку`;
+    openPopup(popupAddCard);
 };
 
 function openFullImagePopup (e) {
     openPopup(cardPopup);
-    popupElementImage.src = e.target.src;
-    popupElementImage.alt = e.target.alt;
-    popupElementTitle.textContent= e.target.alt;
+    fullWidthPopupImage.src = e.target.src;
+    fullWidthPopupImage.alt = e.target.alt;
+    fullWidthPopupTitle.textContent= e.target.alt;
 };
 
-function closePopup () {
-    popups.forEach((popup) => {
-        popup.classList.remove("popup_active");    
-    })   
+function closePopup (popup) {
+    popup.classList.remove("popup_active");    
+};
+
+function  closePopupEditProfile () {
+    closePopup(popupEditProfile);
+  
+};
+
+function closeAddCardPopup () {
+    closePopup(popupAddCard);
+};
+
+function closeFullImagePopup (e) {
+    closePopup(cardPopup);
 };
 
 
-function submitEditProfilePopup (event) {
+
+
+function submitPopupEditProfile (event) {
     event.preventDefault();
-    title.textContent = popupTitle.value;
-    subtitle.textContent = popupSubtitle.value;
-    closePopup ();  
+    title.textContent = profileNameInput.value;
+    subtitle.textContent = profileInfoInput.value;
+    closePopupEditProfile ();  
 };
 
 
-openEditProfileButton.addEventListener("click", openEditProfilePopup);
-openAddCardButton.addEventListener("click", openAddCardPopup);
+buttonOpenEditProfilePopup.addEventListener("click", openPopupEditProfile);
+buttonOpenAddCardPopup.addEventListener("click", openAddCardPopup);
 
-popupClsBtns.forEach((button) => {
-    button.addEventListener("click", closePopup);
-}); 
+buttonCloseEditProfile.addEventListener("click", closePopupEditProfile);
+buttonCloseAddImage.addEventListener("click", closeAddCardPopup);
+buttonCloseImage.addEventListener("click", closeFullImagePopup);
 
-popupSaveBtn.addEventListener("click", submitEditProfilePopup);
+
+popupEditProfile.addEventListener("submit", submitPopupEditProfile);
 
