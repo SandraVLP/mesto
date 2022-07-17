@@ -34,6 +34,8 @@ function  openPopupEditProfile () {
 };
 
 function openAddCardPopup () {
+    newCardTitleInput.value = newCardTitleInput.textContent;
+    newCardLinkInput.value = newCardLinkInput.textContent;
     openPopup(popupAddCard);
 };
 
