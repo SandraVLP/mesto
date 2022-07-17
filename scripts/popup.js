@@ -27,6 +27,8 @@ function openPopup (popup) {
 };
 
 function  openPopupEditProfile () {
+    
+ 
     openPopup(popupEditProfile);
   
 };
@@ -47,11 +49,15 @@ function closePopup (popup) {
 };
 
 function  closePopupEditProfile () {
+    profileNameInput.value = ""; 
+    profileInfoInput.value = ""; 
     closePopup(popupEditProfile);
   
 };
 
 function closeAddCardPopup () {
+    newCardTitleInput.value = "";
+    newCardLinkInput.value = "";
     closePopup(popupAddCard);
 };
 
