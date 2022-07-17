@@ -54,6 +54,8 @@ function  closePopupEditProfile () {
 };
 
 function closeAddCardPopup () {
+    newCardTitleInput.value = "";
+    newCardLinkInput.value = "";
     closePopup(popupAddCard);
 };
 
