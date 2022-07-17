@@ -27,8 +27,8 @@ function openPopup (popup) {
 };
 
 function  openPopupEditProfile () {
-    
- 
+    profileNameInput.value = title.textContent; 
+    profileInfoInput.value = subtitle.textContent;
     openPopup(popupEditProfile);
   
 };
@@ -49,15 +49,11 @@ function closePopup (popup) {
 };
 
 function  closePopupEditProfile () {
-    profileNameInput.value = ""; 
-    profileInfoInput.value = ""; 
     closePopup(popupEditProfile);
   
 };
 
 function closeAddCardPopup () {
-    newCardTitleInput.value = "";
-    newCardLinkInput.value = "";
     closePopup(popupAddCard);
 };
 
