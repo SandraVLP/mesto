@@ -1,12 +1,6 @@
 const formElement = document.querySelector(".popup__container");
 const formInput = formElement.querySelector('.popup__input');
 
-// Вынесем все необходимые элементы формы в константы
-
-
-const formError = formElement.querySelector(`#${formInput.id}-error`);
-
-
 
 const showInputError = (formElement, inputElement, errorMessage, settings) => {
     const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
@@ -76,7 +70,7 @@ const showInputError = (formElement, inputElement, errorMessage, settings) => {
       formElement.addEventListener('submit', (evt) => {
         hideInputError(formElement, inputElement, settings);
         // У каждой формы отменим стандартное поведение
-        evt.preventDefault();
+        
       });
   
       // Для каждой формы вызовем функцию setEventListeners,

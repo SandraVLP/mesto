@@ -66,7 +66,9 @@ function handleSubmitAddCardForm (e) {
   const link = newCardLinkInput.value;
   renderCard(name, link, true);
   closeAddCardPopup ();
-
+  const buttonSave = document.querySelector(".popup__save_elements");
+  buttonSave.setAttribute("disabled", true);
+  buttonSave.classList.add("popup__save_disabled");
 }
 
 initialCards.forEach(e => renderCard(e.name, e.link));
