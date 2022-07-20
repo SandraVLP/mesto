@@ -31,21 +31,33 @@
             <p class="footer__copyright">&copy;2022 Mesto Russia</p>
         </footer>
         <div class="popup popup_editprofile">
-            <form class="popup__container">
+            <form class="popup__container popup__editform" novalidate>
                 <button type="button" class="popup__close popup__closeprofile"></button>
                 <h2 class="popup__title">Редактировать профиль</h2>
-                <input type="text" placeholder="Имя" class="popup__profile popup__profile_title">
-                <input type="text" placeholder="О себе" class="popup__profile popup__profile_subtitle">
-                <button type="submit" class="popup__save popup__saveprofile">Сохранить</button>
+                <fieldset class="popup__fieldset">
+                    <input type="text"  id="username" placeholder="Имя" minlength="2" maxlength="40" class="popup__profile popup__profile_title popup__input" required>
+                    <span id="username-error" class="popup__input-error"></span>
+                </fieldset>
+                <fieldset class="popup__fieldset">
+                    <input type="text" id="about" placeholder="О себе" minlength="2" maxlength="200" class="popup__profile popup__profile_subtitle popup__input" required>
+                    <span id="about-error" class="popup__input-error"></span>
+                </fieldset>
+                <button type="submit" class="popup__save popup__saveprofile popup__save_valid">Сохранить</button>
             </form>
         </div>
         <div class="popup popup_elements">
-            <form class="popup__container_elements popup__container">
+            <form class="popup__container_elements popup__container popup__addform" novalidate>
                 <button type="button" class="popup__close popup__close_elements"></button>
                 <h2 class="popup__title_elements popup__title">Новое место</h2>
-                <input type="text" placeholder="Название" class="popup__profile popup__profile_title popup__profile_elements  popup__profile_title_elements">
-                <input type="text" placeholder="Ссылка на картинку" class="popup__profile popup__profile_subtitle popup__profile_elements  popup__profile_subtitle_elements">
-                <button type="submit" class="popup__save popup__save_elements">Создать</button>
+                <fieldset class="popup__fieldset">
+                    <input type="text" id="cardname" placeholder="Название" minlength="1" maxlength="30" class="popup__profile popup__input popup__profile_title popup__profile_elements  popup__profile_title_elements" required>
+                    <span id="cardname-error" class="popup__input-error"></span>
+                </fieldset>
+                <fieldset class="popup__fieldset">
+                     <input type="url" id="link" placeholder="Ссылка на картинку" class="popup__profile popup__input popup__profile_subtitle popup__profile_elements  popup__profile_subtitle_elements" required>
+                    <span id="link-error" class="popup__input-error"></span>
+                </fieldset>
+                <button type="submit" class="popup__save popup__save_elements popup__save_valid">Создать</button>
             </form>
         </div>
         <div class="popup popup_element">
@@ -67,5 +79,6 @@
         </template>
         <script defer src="./scripts/popup.js"></script>
         <script defer src="./scripts/card.js"></script>
+        <script defer src="./scripts/validate-copy.js"></script>
 </body>
 </html>

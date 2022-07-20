@@ -23,6 +23,7 @@ const fullWidthPopupTitle = document.querySelector(".popup__image-title");
 
 
 function openPopup (popup) {
+    document.addEventListener('keydown', closeEsc);
     popup.classList.add("popup_active");
 };
 
@@ -47,11 +48,13 @@ function openFullImagePopup (e) {
 };
 
 function closePopup (popup) {
-    popup.classList.remove("popup_active");    
+    popup.classList.remove("popup_active"); 
+       
 };
 
 function  closePopupEditProfile () {
     closePopup(popupEditProfile);
+    
   
 };
 
@@ -74,6 +77,9 @@ function submitPopupEditProfile (event) {
 };
 
 
+
+
+
 buttonOpenEditProfilePopup.addEventListener("click", openPopupEditProfile);
 buttonOpenAddCardPopup.addEventListener("click", openAddCardPopup);
 
@@ -84,3 +90,31 @@ buttonCloseImage.addEventListener("click", closeFullImagePopup);
 
 popupEditProfile.addEventListener("submit", submitPopupEditProfile);
 
+function closeEsc(e) {
+    if (e.key === 'Escape') {
+    const popupOpened = document.querySelector(".popup_active");
+    closePopup(popupOpened);
+    document.removeEventListener('keydown', closeEsc);
+    };
+};   
+
+popups.forEach((popup) => popup.addEventListener('click', (event) => {
+    if(event.target === event.currentTarget) {
+        popup.classList.remove("popup_active"); 
+    }
+}));
+
+
+
+
+/* function clickOutside(event) {
+    console.log(event.target);
+
+    if (event.target.classList.contains("popup")) {
+        closePopup(popup);
+    }
+};
+
+/* document.body.addEventListener("click", function (event){
+    clickOutside (event);
+}) */
