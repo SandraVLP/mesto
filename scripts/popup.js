@@ -77,23 +77,29 @@ function submitPopupEditProfile (event) {
 buttonOpenEditProfilePopup.addEventListener("click", openPopupEditProfile);
 buttonOpenAddCardPopup.addEventListener("click", openAddCardPopup);
 
-buttonCloseEditProfile.addEventListener("click", closePopupEditProfile);
-buttonCloseAddImage.addEventListener("click", closeAddCardPopup);
-buttonCloseImage.addEventListener("click", closeFullImagePopup);
 
 
 popupEditProfile.addEventListener("submit", submitPopupEditProfile);
 
 function closeOnEsc(e) {
     if (e.key === 'Escape') {
-    const popupOpened = document.querySelector(".popup_active");
-    closePopup(popupOpened);
+        const popupOpened = document.querySelector(".popup_active");
+        closePopup(popupOpened);
     };
 };   
 
 popups.forEach((popup) => popup.addEventListener('click', (event) => {
     if(event.target === event.currentTarget) {
         closePopup(popup); 
+    }
+    if(event.target === buttonCloseImage) {
+        closeFullImagePopup();
+    }
+    if(event.target === buttonCloseAddImage) {
+        closeAddCardPopup();
+    }
+    if(event.target === buttonCloseEditProfile) {
+        closePopupEditProfile();
     }
 }));
 
