@@ -1,78 +1,65 @@
-const cardTemplate = document.querySelector("#cardTemplate").content;
-const cardsSection = document.querySelector(".card");
-const initialCards = [
-    {
-      name: 'Архыз',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-    },
-    {
-      name: 'Челябинская область',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-    },
-    {
-      name: 'Иваново',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-    },
-    {
-      name: 'Камчатка',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-    },
-    {
-      name: 'Холмогорский район',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-    },
-    {
-      name: 'Байкал',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-    }
-  ];
+import { openPopup, cardPopup } from './index.js';
 
-  const addLike = (e) => {
-    e.target.classList.toggle("element__heart_active");
-  };
-
-  const deleteCard = (e) => {
-    e.target.closest(".element").remove();
-  };
+export class Card {
+  constructor(data, templateSelector) {
+    this._name = data.name;
+    this._link = data.link;
+    this._templateSelector = templateSelector;
 
 
-const createCard = (name, link) => {
-  const element = cardTemplate.querySelector(".element").cloneNode(true);
-  const elementImage = element.querySelector(".element__image");
-  element.querySelector(".element__title").textContent = name;
-  elementImage.src = link;
-  elementImage.alt = name;
-  element.querySelector(".element__heart").addEventListener("click", addLike);
-  element.querySelector(".element__basket").addEventListener("click", deleteCard);
-  elementImage.addEventListener("click", openFullImagePopup);
-  return element;
-}; 
-
-const renderCard = (name, link, toEnd) => {
-  const elementCard = createCard(name, link);
-  if (toEnd === true) {
-    cardsSection.prepend(elementCard);
   }
-  else {
-    cardsSection.append(elementCard);
-  }   
+
+  _getTemplate() {
+    const cardElement = document.querySelector(this._templateSelector).content.querySelector('.element').cloneNode(true);
+    
+    return cardElement;
+    }
+
+  generateCard() {
+    this._element = this._getTemplate();
+    this._likeButton = this._element.querySelector('.element__heart');
+    this._deleteButton = this._element.querySelector('.element__basket');
+    this._elementImage = this._element.querySelector(".element__image");
+    this._setEventListeners();
+  
+    this._element.querySelector(".element__title").textContent = this._name;
+    this._element.querySelector(".element__image").src = this._link;
+    this._element.querySelector(".element__image").alt = this._name;
+    return this._element;
+
+  }  
+
+  _handleLikeButton() {
+    this._likeButton.classList.toggle("element__heart_active");
+  }
+
+  _handleDeleteButton() {
+    this._element.remove();
+
+  } 
+
+  _openFullImagePopup (e) {
+    document.querySelector(".popup__image").src = e.target.src;
+    document.querySelector(".popup__image").alt = e.target.alt;
+    document.querySelector(".popup__image-title").textContent= e.target.alt;
+    openPopup(cardPopup);
+
 };
 
 
+  _setEventListeners() {
+    this._likeButton.addEventListener("click", () => {
+      this._handleLikeButton()
+      });
+    this._deleteButton.addEventListener("click", () => {
+      this._handleDeleteButton()
+      });
+    
+    this._elementImage.addEventListener("click", (e) => {
+      this._openFullImagePopup(e)
+  }); 
+  }
 
-function handleSubmitAddCardForm (e) {
-  e.preventDefault();
-  const name = newCardTitleInput.value;
-  const link = newCardLinkInput.value;
-  renderCard(name, link, true);
-  closeAddCardPopup ();
-  const buttonSave = document.querySelector(".popup__save_elements");
-  buttonSave.setAttribute("disabled", true);
-  buttonSave.classList.add("popup__save_disabled");
+
 }
 
-initialCards.forEach(e => renderCard(e.name, e.link));
-
-
-
-popupAddCard.addEventListener("submit", handleSubmitAddCardForm);
