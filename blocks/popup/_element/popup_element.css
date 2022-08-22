@@ -1,6 +1,6 @@
 .popup_element {
 
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.9);
     position: fixed;
     transition: .3s;
     left: 0;
