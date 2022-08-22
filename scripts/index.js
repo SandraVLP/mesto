@@ -35,7 +35,8 @@ const subtitle = document.querySelector(".profile__subtitle");
 const profileNameInput = document.querySelector(".popup__profile_title");
 const profileInfoInput = document.querySelector(".popup__profile_subtitle");
 const cards = document.querySelector('.cards');
-
+const cardContainer = document.querySelector(".popup__container_elements");
+const popupContainer = document.querySelector(".popup__container");
 
 
 
@@ -52,7 +53,7 @@ function  openPopupEditProfile () {
 };
 
 function openAddCardPopup () {
-  document.querySelector(".popup__container_elements").reset();
+  cardContainer.reset();
   openPopup(popupAddCard);
 };
 
@@ -140,10 +141,7 @@ const items = [
     }
   ];
 
-  const item = {  name: newCardTitleInput.value,
-    link: newCardLinkInput.value,
-
-  }
+ 
 
 
   function createCard(item) {
@@ -160,6 +158,9 @@ const items = [
   
   function handleSubmitAddCardForm (e) {
     e.preventDefault();
+    const item = {  name: newCardTitleInput.value,
+      link: newCardLinkInput.value,
+    };
     cards.prepend((createCard(item)));
     profileValidate.blockSaveButton();
     closeAddCardPopup ();
@@ -171,8 +172,8 @@ const items = [
 
 
 
-const profileValidate = new FormValidator(settings, document.querySelector(".popup__container"));
+const profileValidate = new FormValidator(settings, popupContainer);
 profileValidate.enableValidation();
 
-const cardValidate = new FormValidator(settings, document.querySelector(".popup__container_elements"));
+const cardValidate = new FormValidator(settings, cardContainer);
 cardValidate.enableValidation();
