@@ -1,6 +1,4 @@
-import { openPopup, cardPopup, popupImage, popupImageTitle } from './index.js';
-
-export class Card {
+export default class Card {
   constructor(data, templateSelector) {
     this._name = data.name;
     this._link = data.link;
@@ -34,13 +32,13 @@ export class Card {
     this._element.remove();
   } 
 
-  _openFullImagePopup () {
+ /* _openFullImagePopup () {
     popupImage.src = this._elementImage.src;
     popupImage.alt = this._elementImage.alt;
     popupImageTitle.textContent = this._elementImage.alt;
     openPopup(cardPopup);
 };
-
+ */
 
   _setEventListeners() {
     this._likeButton.addEventListener("click", () => {

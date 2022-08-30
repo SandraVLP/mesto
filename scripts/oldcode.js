@@ -155,4 +155,106 @@ const showInputError = (formElement, inputElement, errorMessage, settings) => {
     })
   }; 
 
+  function closeOnEsc(e) {
+    if (e.key === 'Escape') {
+        const popupOpened = document.querySelector(".popup_active");
+        closePopup(popupOpened);
+    };
+}; 
+
+function closePopup (popup) {
+  popup.classList.remove("popup_active");
+  document.removeEventListener('keydown', closeOnEsc);        
+};
+
+export function openPopup (popup) {
+  document.addEventListener('keydown', closeOnEsc);
+  popup.classList.add("popup_active");
+};
+
+function  openPopupEditProfile () {
+  profileNameInput.value = title.textContent; 
+  profileInfoInput.value = subtitle.textContent;
+  openPopup(popupEditProfile);
+
+};
+
+function openAddCardPopup () {
+cardContainer.reset();
+openPopup(popupAddCard);
+};
+
+
+
+function  closePopupEditProfile () {
+  closePopup(popupEditProfile); 
+};
+
+function closeAddCardPopup () {
+  closePopup(popupAddCard);
+};
+
+function closeFullImagePopup (e) {
+  closePopup(cardPopup);
+};
+
+
+function submitPopupEditProfile (event) {
+  event.preventDefault();
+  title.textContent = profileNameInput.value;
+  subtitle.textContent = profileInfoInput.value;
+  closePopupEditProfile ();  
+};
+
+
+
+buttonOpenEditProfilePopup.addEventListener("click", openPopupEditProfile);
+buttonOpenAddCardPopup.addEventListener("click", openAddCardPopup);
+
+
+
+popupEditProfile.addEventListener("submit", submitPopupEditProfile);
+
+
+
+popups.forEach((popup) => popup.addEventListener('click', (event) => {
+  if(event.target === event.currentTarget) {
+      closePopup(popup); 
+  }
+  if(event.target === buttonCloseImage) {
+      closeFullImagePopup();
+  }
+  if(event.target === buttonCloseAddImage) {
+      closeAddCardPopup();
+  }
+  if(event.target === buttonCloseEditProfile) {
+      closePopupEditProfile();
+  }
+}));
+
+function createCard(item) {
+  const card = new Card(item, "#cardTemplate");
+  const cardElement = card.generateCard();
+  return cardElement;
+};
+
+items.forEach((item) => {
+  cards.append(createCard(item));
+});
+
+
+
+function handleSubmitAddCardForm (e) {
+  e.preventDefault();
+  const item = {  name: newCardTitleInput.value,
+    link: newCardLinkInput.value,
+  };
+  cards.prepend((createCard(item)));
+  profileValidate.blockSaveButton();
+  closeAddCardPopup ();
+}
+
+
+
+popupAddCard.addEventListener("submit", handleSubmitAddCardForm);
 
