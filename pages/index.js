@@ -1,12 +1,12 @@
-import { cardValidate, popupImage, profileValidate } from '../utils/constants.js';
-import { defaultCardList} from '../utils/utils.js';
+import { cardValidate, popupPreview, profileValidate, defaultCardList } from '../utils/constants.js';
+
 
 profileValidate.enableValidation();
 
 cardValidate.enableValidation();
 
 
-defaultCardList.renderItems() ;
+defaultCardList.renderItems();
 
-/*
-popupImage.setEventListeners(); */
+
+popupPreview.setEventListeners();

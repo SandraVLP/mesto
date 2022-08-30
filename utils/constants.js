@@ -17,6 +17,7 @@ const buttonOpenEditProfilePopup = document.querySelector(".profile__button-add"
 const buttonOpenAddCardPopup = document.querySelector(".profile__button-edit");
 
 
+
 const popupCloseButtons = document.querySelectorAll(".popup__close");
 const buttonCloseEditProfile = document.querySelector(".popup__close-profile")
 const buttonCloseAddImage = document.querySelector(".popup__close_elements");
@@ -65,7 +66,48 @@ export  const items = [
       link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
     }
   ];
+  import Section from '../components/Section.js';
+  import { renderCard } from "./utils.js";
+
+  export const defaultCardList = new Section({
+    data: items,
+    renderer: (item) => {
+      const cardElement = renderCard(item);
+      defaultCardList.addItem(cardElement);
+    }
+  },
+  cards); 
+
 
 import PopupWithImage from "../components/PopupWithImage.js"
-/* export const popupImage = new PopupWithImage(".popup__image"); */
+export const popupPreview = new PopupWithImage(".popup_element");
 
+import UserInfo from "../components/UserInfo.js";
+const userInfo = new UserInfo({userName: title, userAbout: subtitle});
+
+import PopupWithForm from "../components/PopupWithForm.js";
+
+
+
+const imagePopup = new PopupWithForm(".popup_elements", (item) => {
+  const newCard = renderCard(item);
+  defaultCardList.addItem(newCard);
+  imagePopup.close();
+})
+
+imagePopup.setEventListeners();
+buttonOpenAddCardPopup.addEventListener('click', () => {imagePopup.open()})
+
+const profilePopup = new PopupWithForm(".popup_edit", (data) => {
+  userInfo.setUserInfo(data);
+  console.log(data);
+  profilePopup.close();
+});
+profilePopup.setEventListeners();
+buttonOpenEditProfilePopup.addEventListener('click', () => {
+  const profileInfo = userInfo.getUserInfo();
+  profileNameInput.value = profileInfo.name; 
+  profileInfoInput.value = profileInfo.about;
+
+  profilePopup.open()
+});
