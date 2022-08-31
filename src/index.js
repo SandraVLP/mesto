@@ -1,4 +1,5 @@
-import { cardValidate, popupPreview, profileValidate, defaultCardList } from '../utils/constants.js';
+import "./pages/index.css";
+import { cardValidate, popupPreview, profileValidate, defaultCardList } from './utils/constants.js';
 
 
 profileValidate.enableValidation();
