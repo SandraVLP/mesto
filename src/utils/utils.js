@@ -1,4 +1,4 @@
-import { popupPreview,  } from './constants.js';
+import { popupPreview,  } from '../pages/index.js';
 
 import Card from '../components/Card.js';
 

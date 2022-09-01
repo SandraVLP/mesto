@@ -9,8 +9,7 @@ export default class FormValidator {
     this._formElement = formElement;
     this._inputList = Array.from(this._formElement.querySelectorAll(this._inputSelector));
     this._buttonElement = this._formElement.querySelector(this._submitButtonSelector);
-    this._errorElementActive =  document.querySelector('popup__input-error_active');
-    this._buttonSave = document.querySelector(".popup__save_elements"); 
+    this._errorElementActive =  formElement.querySelector('popup__input-error_active'); 
   }
 
   _showInputError(inputElement, errorMessage)  {
@@ -72,10 +71,6 @@ export default class FormValidator {
       });
     }
   
-blockSaveButton () {
-  this._buttonSave.setAttribute("disabled", true);
-  this._buttonSave.classList.add(this._inactiveButtonClass);
-}  
 
 
  }
