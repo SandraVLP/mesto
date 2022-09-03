@@ -26,7 +26,7 @@ export const popupPreview = new PopupWithImage(".popup_element");
 popupPreview.setEventListeners();
 
 import UserInfo from "../components/UserInfo.js";
-const userInfo = new UserInfo({userName: ".profile__title", userAbout: ".profile__subtitle"});
+const userInfo = new UserInfo({userNameSelector: ".profile__title", userAboutSelector: ".profile__subtitle"});
 
 import PopupWithForm from "../components/PopupWithForm.js";
 
@@ -40,15 +40,18 @@ buttonOpenEditProfilePopup.addEventListener('click', () => {
     const profileInfo = userInfo.getUserInfo();
     profileNameInput.value = profileInfo.name; 
     profileInfoInput.value = profileInfo.about;
-  
+    profileValidate.resetValidation();
     profilePopup.open()
 });
 
 const imagePopup = new PopupWithForm(".popup_elements", (item) => {
     const newCard = renderCard(item);
     defaultCardList.addItem(newCard);
+    cardValidate.resetValidation(); 
     imagePopup.close();
   })
   
   imagePopup.setEventListeners();
-  buttonOpenAddCardPopup.addEventListener('click', () => {imagePopup.open()})
+  buttonOpenAddCardPopup.addEventListener('click', () => {
+    cardValidate.resetValidation();
+    imagePopup.open()})
