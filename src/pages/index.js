@@ -22,7 +22,7 @@ cardValidate.enableValidation();
 
 
 import PopupWithImage from "../components/PopupWithImage.js"
-export const popupPreview = new PopupWithImage(".popup_element");
+export const popupPreview = new PopupWithImage(".popup_element"); /* используется в utils.js */
 popupPreview.setEventListeners();
 
 import UserInfo from "../components/UserInfo.js";
