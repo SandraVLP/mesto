@@ -1,0 +1,10 @@
+.profile__pencil {
+    display: none;
+    position: absolute;
+    top: 47px;
+    left: 47px;
+}
+
+/* .profile__pencil:hover{
+    display: block;
+} */

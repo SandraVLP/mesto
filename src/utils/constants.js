@@ -15,6 +15,7 @@ const popups = document.querySelectorAll(".popup");
 
 export const buttonOpenEditProfilePopup = document.querySelector(".profile__button-add");
 export const buttonOpenAddCardPopup = document.querySelector(".profile__button-edit");
+export const buttonOpenEditAvatarPopup = document.querySelector(".profile__button-change");
 
 
 
@@ -32,8 +33,10 @@ export const profileInfoInput = document.querySelector(".popup__profile_subtitle
 /* export const cards = document.querySelector('.cards'); */
 export const cardContainer = document.querySelector(".popup__container_elements");
 export const popupContainer = document.querySelector(".popup__container");
+export const avatarImage = document.querySelector(".profile__avatar");
 
 
+/*
 export  const items = [
     {
       name: 'Архыз',
@@ -59,4 +62,4 @@ export  const items = [
       name: 'Байкал',
       link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
     }
-  ];
+  ]; */
