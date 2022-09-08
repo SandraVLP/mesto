@@ -17,7 +17,6 @@ const createCard = (data) => {
     (cardObject) => {popupDelete.open(cardObject, data._id)},
     (cardId, cardObject) => {api.putLike(cardId)
       .then((res) =>{
-        console.log(res.likes.length)
         cardObject.updateLikes(res.likes)
       }) 
     },
