@@ -39,7 +39,7 @@ html{-webkit-text-size-adjust:100%;line-height:1.15}body{margin:0}main{display:b
 .popup__input-error{border-bottom-color:red;color:red;font-size:12px;font-weight:400;line-height:15px}
 .popup__fieldset{border:0;padding:0}
 .popup__input-error{border-bottom-color:red;display:block;min-height:30px}
-.element__like-count{font-size:13px;font-weight:400;height:13px;line-height:16px;margin:0 2px;width:10px}
+.element__like-count{font-size:13px;font-weight:400;height:13px;line-height:16px;margin:0 7px;width:10px}
 .element__likes{display:flex;flex-direction:column;margin-right:20px}
 .profile__button-change{background:#000;background-position:50%;background-repeat:no-repeat;background-size:contain;border:none;border-radius:50%;cursor:pointer;height:120px;padding:0;position:relative;width:120px}.profile__button-change:hover .profile__avatar{opacity:.6}.profile__button-change:hover .profile__pencil{display:block}
 .profile__pencil{display:none;left:47px;position:absolute;top:47px}
