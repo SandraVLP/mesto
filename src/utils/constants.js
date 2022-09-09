@@ -33,6 +33,7 @@ export const profileInfoInput = document.querySelector(".popup__profile_subtitle
 /* export const cards = document.querySelector('.cards'); */
 export const cardContainer = document.querySelector(".popup__container_elements");
 export const popupContainer = document.querySelector(".popup__container");
+export const avatarContainer = document.querySelector(".popup__container_avatar");
 export const avatarImage = document.querySelector(".profile__avatar");
 
 

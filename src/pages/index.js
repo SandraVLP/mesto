@@ -1,12 +1,13 @@
 import "./index.css";
-import { avatarImage, settings, cardContainer, buttonOpenEditAvatarPopup, popupContainer, buttonOpenEditProfilePopup, profileNameInput, profileInfoInput, buttonOpenAddCardPopup, } from '../utils/constants.js';
+import { avatarContainer, avatarImage, settings, cardContainer, buttonOpenEditAvatarPopup, popupContainer, buttonOpenEditProfilePopup, profileNameInput, profileInfoInput, buttonOpenAddCardPopup, } from '../utils/constants.js';
 import Section from '../components/Section.js';
 import Api from '../components/Api.js';
 import Card from '../components/Card.js';
 
 const api = new Api({
   baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-49/',
-  headers: {authorization: '3bd429b0-18aa-4fd8-8b35-785c3cf83e41'}
+  headers: {authorization: '3bd429b0-18aa-4fd8-8b35-785c3cf83e41',
+  'Content-Type': 'application/json'}
 });
 
 const createCard = (data) => {
@@ -44,17 +45,18 @@ const defaultCardList = new Section({
 import FormValidator from "../components/FormValidator.js";
 const profileValidate = new FormValidator(settings, popupContainer);
 const cardValidate = new FormValidator(settings, cardContainer);
+const avatarValidate = new FormValidator(settings,avatarContainer);
 
 profileValidate.enableValidation();
 cardValidate.enableValidation();
-
+avatarValidate.enableValidation();
 
 import PopupWithImage from "../components/PopupWithImage.js"
 export const popupPreview = new PopupWithImage(".popup_element"); 
 popupPreview.setEventListeners();
 
 import UserInfo from "../components/UserInfo.js";
-const userInfo = new UserInfo({userNameSelector: ".profile__title", userAboutSelector: ".profile__subtitle"});
+const userInfo = new UserInfo({userNameSelector: ".profile__title", userAboutSelector: ".profile__subtitle", userAvatarSelector: ".profile__avatar"});
 
 Promise.all([
   api.getProfileData(),
@@ -133,8 +135,6 @@ const imagePopup = new PopupWithForm(".popup_elements", (data, popupObj) => {
  const avatarChange = new PopupWithForm(".popup_avatar", (data) => {
    api.changeAvatar(data)
    .then((user) => {
-    console.log(link);
-     console.log(avatarImage)
      avatarImage.src = user.avatar;
      avatarChange.close()
    })
