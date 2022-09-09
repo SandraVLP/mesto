@@ -22,9 +22,10 @@ export default class Popup {
     }; 
 
     setEventListeners () {
-        this._popup.addEventListener('click', (e) => {
+        const closeButton = this._popup.querySelector(".popup__close");
+        this._popup.addEventListener('mousedown', (e) => {
             const popup = e.currentTarget;
-            if (e.target === popup || e.target === popup.querySelector(".popup__close"))
+            if (e.target === popup || e.target === closeButton)
             {this.close()}
         });
 
